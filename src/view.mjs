@@ -12,8 +12,20 @@ export default class View {
         }
     }
 
+    onStopRecordClick(command) {
+
+        return () => {
+            command()
+        }
+    }
+
     configureStartRecordingButton(command) {
         this.btnStart.addEventListener('click',this.onRecordClick(command) )
     }
+
+    configureStopRecordingButton(command) {
+        this.btnStop.addEventListener('click',this.onStopRecordClick(command) )
+    }
+
 
 };
